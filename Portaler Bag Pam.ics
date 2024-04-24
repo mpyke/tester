@@ -1,0 +1,290 @@
+BEGIN:VCALENDAR
+PRODID:-//Microsoft Corporation//Outlook 16.0 MIMEDIR//EN
+VERSION:2.0
+METHOD:REQUEST
+X-MS-OLK-FORCEINSPECTOROPEN:TRUE
+BEGIN:VTIMEZONE
+TZID:Romance Standard Time
+BEGIN:STANDARD
+DTSTART:16011028T030000
+RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=10
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010325T020000
+RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=3
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+ATTENDEE;CN="Kevin Kamper Meejach Petersen";RSVP=TRUE:mailto:kkmp@netcompan
+	y.com
+ATTENDEE;CN="Peter Brixval";RSVP=TRUE:mailto:pbr@netcompany.com
+ATTENDEE;CN="Mads Solberg Pyke";RSVP=TRUE:mailto:mspy@netcompany.com
+ATTENDEE;CN="Christians Kirke.4.24";CUTYPE=RESOURCE;ROLE=NON-PARTICIPANT;RS
+	VP=TRUE:mailto:MeetChristiansKirke424@netcompany.com
+CLASS:PUBLIC
+CREATED:20240423T110622Z
+DESCRIPTION:*	Det skal være unikt bruger per dag.\n\nhttps://splunk.nchost
+	ing.dk/en-US/app/NCOP-OBAD/search?earliest=-30d%40d&latest=now&q=%7C%20fro
+	m%20datamodel%3A%22IIS_Base_Portal_Logs%22%20%7C%20search%0A%20%20%20%20%2
+	0%20%20%20%20%20application_type%3Dweb%0A%20%20%20%20%20%20%20%20%20%20AND
+	%20portal%3Dad%0A%20%7C%20stats%20dc(user)%20as%20unique_user%20by%20date&
+	display.page.search.mode=smart&dispatch.sample_ratio=1&display.page.search
+	.tab=visualizations&display.general.type=visualizations&sid=1713532585.176
+	85997\n\n| from datamodel:"IIS_Base_Portal_Logs" | search\n\n          app
+	lication_type=web\n\n          AND portal=ad\n\n| stats dc(user) as unique
+	_user by date\n\n*	Api skal være unikt IP per dag\, (skal komme fra nclan
+	)\n\nhttps://splunk.nchosting.dk/en-US/app/NCOP-OBAD/search?earliest=-30d%
+	40d&latest=now&q=%7C%20from%20datamodel%3A%22IIS_Base_Portal_Logs%22%20%7C
+	%20search%0A%20%20%20%20%20%20%20%20%20%20application_type%3Dapi%0A%20%20%
+	20%20%20%20%20%20%20%20AND%20portal%3Dad%0A%20%20%20%20%20%20%20%20%20%20A
+	ND%20(c_ip%3D%22172.*%22%20OR%20c_ip%3D%22192.168.*%22)%0A%20%7C%20stats%2
+	0dc(c_ip)%20as%20unique_ips%20by%20date&display.page.search.mode=smart&dis
+	patch.sample_ratio=1&display.page.search.tab=visualizations&display.genera
+	l.type=visualizations&sid=1713532366.17684292\n| from datamodel:"IIS_Base_
+	Portal_Logs" | search\n\n          application_type=api\n\n          AND p
+	ortal=ad\n\n          AND (c_ip="172.*" OR c_ip="192.168.*")\n\n| stats dc
+	(c_ip) as unique_ips by date\n\n*	Main site til Klient netværk - 5 cards 
+	med standard features: Request Noc\, Request Cloud\, Guides\, Reset MFA\, 
+	Reset Password\n*	Indkald til næste møde\n\n \n\n
+DTEND;TZID="Romance Standard Time":20240424T105000
+DTSTAMP:20240419T131920Z
+DTSTART;TZID="Romance Standard Time":20240424T100000
+LAST-MODIFIED:20240423T110622Z
+LOCATION:Christians Kirke.4.24
+ORGANIZER;CN="Kevin Kamper Meejach Petersen":mailto:kkmp@netcompany.com
+PRIORITY:5
+SEQUENCE:0
+SUMMARY:Portaler Bag Pam
+TRANSP:OPAQUE
+UID:040000008200E00074C5B7101A82E00800000000800F06C86A92DA01000000000000000
+	010000000331DE3E58E7DCC408F05723AEB9C8147
+X-ALT-DESC;FMTTYPE=text/html:<html xmlns:v="urn:schemas-microsoft-com:vml" 
+	xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-mic
+	rosoft-com:office:word" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C1488
+	2" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns="http:
+	//www.w3.org/TR/REC-html40"><head>\n<meta name="Generator" content="Micros
+	oft Word 15 (filtered medium)"><style><!--\n/* Font Definitions */\n@font-
+	face\n	{font-family:"Cambria Math"\;\n	panose-1:2 4 5 3 5 4 6 3 2 4\;}\n@f
+	ont-face\n	{font-family:Calibri\;\n	panose-1:2 15 5 2 2 2 4 3 2 4\;}\n/* S
+	tyle Definitions */\np.MsoNormal\, li.MsoNormal\, div.MsoNormal\n	{margin:
+	0cm\;\n	font-size:11.0pt\;\n	font-family:"Calibri"\,sans-serif\;\n	mso-lig
+	atures:standardcontextual\;\n	mso-fareast-language:EN-US\;}\na:link\, span
+	.MsoHyperlink\n	{mso-style-priority:99\;\n	color:#0563C1\;\n	text-decorati
+	on:underline\;}\nspan.EmailStyle18\n	{mso-style-type:personal-compose\;\n	
+	font-family:"Times New Roman"\,serif\;\n	mso-ligatures:none\;\n	mso-fareas
+	t-language:#2000\;}\n.MsoChpDefault\n	{mso-style-type:export-only\;\n	font
+	-size:10.0pt\;\n	mso-ligatures:none\;}\n@page WordSection1\n	{size:612.0pt
+	 792.0pt\;\n	margin:72.0pt 72.0pt 72.0pt 72.0pt\;}\ndiv.WordSection1\n	{pa
+	ge:WordSection1\;}\n/* List Definitions */\n@list l0\n	{mso-list-id:180361
+	904\;\n	mso-list-template-ids:312776432\;}\n@list l0:level1\n	{mso-level-n
+	umber-format:bullet\;\n	mso-level-text:\;\n	mso-level-tab-stop:36.0pt\;
+	\n	mso-level-number-position:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-fon
+	t-size:10.0pt\;\n	font-family:Symbol\;}\n@list l0:level2\n	{mso-level-numb
+	er-format:bullet\;\n	mso-level-text:\;\n	mso-level-tab-stop:72.0pt\;\n	
+	mso-level-number-position:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font-s
+	ize:10.0pt\;\n	font-family:Symbol\;}\n@list l0:level3\n	{mso-level-number-
+	format:bullet\;\n	mso-level-text:\;\n	mso-level-tab-stop:108.0pt\;\n	ms
+	o-level-number-position:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font-siz
+	e:10.0pt\;\n	font-family:Symbol\;}\n@list l0:level4\n	{mso-level-number-fo
+	rmat:bullet\;\n	mso-level-text:\;\n	mso-level-tab-stop:144.0pt\;\n	mso-
+	level-number-position:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font-size:
+	10.0pt\;\n	font-family:Symbol\;}\n@list l0:level5\n	{mso-level-number-form
+	at:bullet\;\n	mso-level-text:\;\n	mso-level-tab-stop:180.0pt\;\n	mso-le
+	vel-number-position:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font-size:10
+	.0pt\;\n	font-family:Symbol\;}\n@list l0:level6\n	{mso-level-number-format
+	:bullet\;\n	mso-level-text:\;\n	mso-level-tab-stop:216.0pt\;\n	mso-leve
+	l-number-position:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font-size:10.0
+	pt\;\n	font-family:Symbol\;}\n@list l0:level7\n	{mso-level-number-format:b
+	ullet\;\n	mso-level-text:\;\n	mso-level-tab-stop:252.0pt\;\n	mso-level-
+	number-position:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font-size:10.0pt
+	\;\n	font-family:Symbol\;}\n@list l0:level8\n	{mso-level-number-format:bul
+	let\;\n	mso-level-text:\;\n	mso-level-tab-stop:288.0pt\;\n	mso-level-nu
+	mber-position:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font-size:10.0pt\;
+	\n	font-family:Symbol\;}\n@list l0:level9\n	{mso-level-number-format:bulle
+	t\;\n	mso-level-text:\;\n	mso-level-tab-stop:324.0pt\;\n	mso-level-numb
+	er-position:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font-size:10.0pt\;\n
+		font-family:Symbol\;}\n@list l1\n	{mso-list-id:341278625\;\n	mso-list-tem
+	plate-ids:1368662748\;}\n@list l1:level1\n	{mso-level-number-format:bullet
+	\;\n	mso-level-text:\;\n	mso-level-tab-stop:36.0pt\;\n	mso-level-number
+	-position:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font-size:10.0pt\;\n	f
+	ont-family:Symbol\;}\n@list l1:level2\n	{mso-level-number-format:bullet\;\
+	n	mso-level-text:o\;\n	mso-level-tab-stop:72.0pt\;\n	mso-level-number-posi
+	tion:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font-size:10.0pt\;\n	font-f
+	amily:"Courier New"\;\n	mso-bidi-font-family:"Times New Roman"\;}\n@list l
+	1:level3\n	{mso-level-number-format:bullet\;\n	mso-level-text:\;\n	mso-
+	level-tab-stop:108.0pt\;\n	mso-level-number-position:left\;\n	text-indent:
+	-18.0pt\;\n	mso-ansi-font-size:10.0pt\;\n	font-family:Symbol\;}\n@list l1:
+	level4\n	{mso-level-number-format:bullet\;\n	mso-level-text:\;\n	mso-le
+	vel-tab-stop:144.0pt\;\n	mso-level-number-position:left\;\n	text-indent:-1
+	8.0pt\;\n	mso-ansi-font-size:10.0pt\;\n	font-family:Symbol\;}\n@list l1:le
+	vel5\n	{mso-level-number-format:bullet\;\n	mso-level-text:\;\n	mso-leve
+	l-tab-stop:180.0pt\;\n	mso-level-number-position:left\;\n	text-indent:-18.
+	0pt\;\n	mso-ansi-font-size:10.0pt\;\n	font-family:Symbol\;}\n@list l1:leve
+	l6\n	{mso-level-number-format:bullet\;\n	mso-level-text:\;\n	mso-level-
+	tab-stop:216.0pt\;\n	mso-level-number-position:left\;\n	text-indent:-18.0p
+	t\;\n	mso-ansi-font-size:10.0pt\;\n	font-family:Symbol\;}\n@list l1:level7
+	\n	{mso-level-number-format:bullet\;\n	mso-level-text:\;\n	mso-level-ta
+	b-stop:252.0pt\;\n	mso-level-number-position:left\;\n	text-indent:-18.0pt\
+	;\n	mso-ansi-font-size:10.0pt\;\n	font-family:Symbol\;}\n@list l1:level8\n
+		{mso-level-number-format:bullet\;\n	mso-level-text:\;\n	mso-level-tab-
+	stop:288.0pt\;\n	mso-level-number-position:left\;\n	text-indent:-18.0pt\;\
+	n	mso-ansi-font-size:10.0pt\;\n	font-family:Symbol\;}\n@list l1:level9\n	{
+	mso-level-number-format:bullet\;\n	mso-level-text:\;\n	mso-level-tab-st
+	op:324.0pt\;\n	mso-level-number-position:left\;\n	text-indent:-18.0pt\;\n	
+	mso-ansi-font-size:10.0pt\;\n	font-family:Symbol\;}\n@list l2\n	{mso-list-
+	id:797339960\;\n	mso-list-template-ids:1751784000\;}\n@list l2:level1\n	{m
+	so-level-number-format:bullet\;\n	mso-level-text:\;\n	mso-level-tab-sto
+	p:36.0pt\;\n	mso-level-number-position:left\;\n	text-indent:-18.0pt\;\n	ms
+	o-ansi-font-size:10.0pt\;\n	font-family:Symbol\;}\n@list l2:level2\n	{mso-
+	level-number-format:bullet\;\n	mso-level-text:\;\n	mso-level-tab-stop:7
+	2.0pt\;\n	mso-level-number-position:left\;\n	text-indent:-18.0pt\;\n	mso-a
+	nsi-font-size:10.0pt\;\n	font-family:Symbol\;}\n@list l2:level3\n	{mso-lev
+	el-number-format:bullet\;\n	mso-level-text:\;\n	mso-level-tab-stop:108.
+	0pt\;\n	mso-level-number-position:left\;\n	text-indent:-18.0pt\;\n	mso-ans
+	i-font-size:10.0pt\;\n	font-family:Symbol\;}\n@list l2:level4\n	{mso-level
+	-number-format:bullet\;\n	mso-level-text:\;\n	mso-level-tab-stop:144.0p
+	t\;\n	mso-level-number-position:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-
+	font-size:10.0pt\;\n	font-family:Symbol\;}\n@list l2:level5\n	{mso-level-n
+	umber-format:bullet\;\n	mso-level-text:\;\n	mso-level-tab-stop:180.0pt\
+	;\n	mso-level-number-position:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-fo
+	nt-size:10.0pt\;\n	font-family:Symbol\;}\n@list l2:level6\n	{mso-level-num
+	ber-format:bullet\;\n	mso-level-text:\;\n	mso-level-tab-stop:216.0pt\;\
+	n	mso-level-number-position:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font
+	-size:10.0pt\;\n	font-family:Symbol\;}\n@list l2:level7\n	{mso-level-numbe
+	r-format:bullet\;\n	mso-level-text:\;\n	mso-level-tab-stop:252.0pt\;\n	
+	mso-level-number-position:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font-s
+	ize:10.0pt\;\n	font-family:Symbol\;}\n@list l2:level8\n	{mso-level-number-
+	format:bullet\;\n	mso-level-text:\;\n	mso-level-tab-stop:288.0pt\;\n	ms
+	o-level-number-position:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font-siz
+	e:10.0pt\;\n	font-family:Symbol\;}\n@list l2:level9\n	{mso-level-number-fo
+	rmat:bullet\;\n	mso-level-text:\;\n	mso-level-tab-stop:324.0pt\;\n	mso-
+	level-number-position:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font-size:
+	10.0pt\;\n	font-family:Symbol\;}\n@list l3\n	{mso-list-id:1200899419\;\n	m
+	so-list-template-ids:248560474\;}\n@list l3:level1\n	{mso-level-number-for
+	mat:bullet\;\n	mso-level-text:\;\n	mso-level-tab-stop:36.0pt\;\n	mso-le
+	vel-number-position:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font-size:10
+	.0pt\;\n	font-family:Symbol\;}\n@list l3:level2\n	{mso-level-number-format
+	:bullet\;\n	mso-level-text:\;\n	mso-level-tab-stop:72.0pt\;\n	mso-level
+	-number-position:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font-size:10.0p
+	t\;\n	font-family:Symbol\;}\n@list l3:level3\n	{mso-level-number-format:bu
+	llet\;\n	mso-level-text:\;\n	mso-level-tab-stop:108.0pt\;\n	mso-level-n
+	umber-position:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font-size:10.0pt\
+	;\n	font-family:Symbol\;}\n@list l3:level4\n	{mso-level-number-format:bull
+	et\;\n	mso-level-text:\;\n	mso-level-tab-stop:144.0pt\;\n	mso-level-num
+	ber-position:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font-size:10.0pt\;\
+	n	font-family:Symbol\;}\n@list l3:level5\n	{mso-level-number-format:bullet
+	\;\n	mso-level-text:\;\n	mso-level-tab-stop:180.0pt\;\n	mso-level-numbe
+	r-position:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font-size:10.0pt\;\n	
+	font-family:Symbol\;}\n@list l3:level6\n	{mso-level-number-format:bullet\;
+	\n	mso-level-text:\;\n	mso-level-tab-stop:216.0pt\;\n	mso-level-number-
+	position:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font-size:10.0pt\;\n	fo
+	nt-family:Symbol\;}\n@list l3:level7\n	{mso-level-number-format:bullet\;\n
+		mso-level-text:\;\n	mso-level-tab-stop:252.0pt\;\n	mso-level-number-po
+	sition:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font-size:10.0pt\;\n	font
+	-family:Symbol\;}\n@list l3:level8\n	{mso-level-number-format:bullet\;\n	m
+	so-level-text:\;\n	mso-level-tab-stop:288.0pt\;\n	mso-level-number-posi
+	tion:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font-size:10.0pt\;\n	font-f
+	amily:Symbol\;}\n@list l3:level9\n	{mso-level-number-format:bullet\;\n	mso
+	-level-text:\;\n	mso-level-tab-stop:324.0pt\;\n	mso-level-number-positi
+	on:left\;\n	text-indent:-18.0pt\;\n	mso-ansi-font-size:10.0pt\;\n	font-fam
+	ily:Symbol\;}\nol\n	{margin-bottom:0cm\;}\nul\n	{margin-bottom:0cm\;}\n-->
+	</style><!--[if gte mso 9]><xml>\n<o:shapedefaults v:ext="edit" spidmax="1
+	026" />\n</xml><![endif]--><!--[if gte mso 9]><xml>\n<o:shapelayout v:ext=
+	"edit">\n<o:idmap v:ext="edit" data="1" />\n</o:shapelayout></xml><![endif
+	]--></head><body lang="en-DK" link="#0563C1" vlink="#954F72" style="word-w
+	rap:break-word"><div class="WordSection1"><ul style="margin-top:0cm" type=
+	"disc"><li class="MsoNormal" style="mso-list:l1 level1 lfo3\;vertical-alig
+	n:middle"><span lang="DA" style="mso-ligatures:none\;mso-fareast-language:
+	#2000">Det skal være unikt bruger per dag.<o:p></o:p></span></li></ul><p 
+	class="MsoNormal" style="margin-left:72.0pt\;vertical-align:middle"><span 
+	lang="DA" style="mso-ligatures:none\;mso-fareast-language:#2000"><a href="
+	https://splunk.nchosting.dk/en-US/app/NCOP-OBAD/search?earliest=-30d%40d&a
+	mp\;latest=now&amp\;q=%7C%20from%20datamodel%3A%22IIS_Base_Portal_Logs%22%
+	20%7C%20search%0A%20%20%20%20%20%20%20%20%20%20application_type%3Dweb%0A%2
+	0%20%20%20%20%20%20%20%20%20AND%20portal%3Dad%0A%20%7C%20stats%20dc(user)%
+	20as%20unique_user%20by%20date&amp\;display.page.search.mode=smart&amp\;di
+	spatch.sample_ratio=1&amp\;display.page.search.tab=visualizations&amp\;dis
+	play.general.type=visualizations&amp\;sid=1713532585.17685997">https://spl
+	unk.nchosting.dk/en-US/app/NCOP-OBAD/search?earliest=-30d%40d&amp\;latest=
+	now&amp\;q=%7C%20from%20datamodel%3A%22IIS_Base_Portal_Logs%22%20%7C%20sea
+	rch%0A%20%20%20%20%20%20%20%20%20%20application_type%3Dweb%0A%20%20%20%20%
+	20%20%20%20%20%20AND%20portal%3Dad%0A%20%7C%20stats%20dc(user)%20as%20uniq
+	ue_user%20by%20date&amp\;display.page.search.mode=smart&amp\;dispatch.samp
+	le_ratio=1&amp\;display.page.search.tab=visualizations&amp\;display.genera
+	l.type=visualizations&amp\;sid=1713532585.17685997</a><o:p></o:p></span></
+	p><p class="MsoNormal" style="margin-left:72.0pt\;vertical-align:middle"><
+	span lang="EN-US" style="mso-ligatures:none\;mso-fareast-language:#2000">|
+	 from datamodel:&quot\;IIS_Base_Portal_Logs&quot\; | search<o:p></o:p></sp
+	an></p><p class="MsoNormal" style="margin-left:72.0pt\;vertical-align:midd
+	le"><span lang="EN-US" style="mso-ligatures:none\;mso-fareast-language:#20
+	00">&nbsp\;&nbsp\;&nbsp\;&nbsp\;&nbsp\;&nbsp\;&nbsp\;&nbsp\;&nbsp\; applic
+	ation_type=web<o:p></o:p></span></p><p class="MsoNormal" style="margin-lef
+	t:72.0pt\;vertical-align:middle"><span lang="EN-US" style="mso-ligatures:n
+	one\;mso-fareast-language:#2000">&nbsp\;&nbsp\;&nbsp\;&nbsp\;&nbsp\;&nbsp\
+	;&nbsp\;&nbsp\;&nbsp\; AND portal=ad<o:p></o:p></span></p><p class="MsoNor
+	mal" style="mso-margin-top-alt:0cm\;margin-right:0cm\;margin-bottom:12.0pt
+	\;margin-left:72.0pt\;vertical-align:middle"><span lang="EN-US" style="mso
+	-ligatures:none\;mso-fareast-language:#2000">| stats dc(user) as unique_us
+	er by date<o:p></o:p></span></p><ul style="margin-top:0cm" type="disc"><li
+	 class="MsoNormal" style="mso-list:l1 level1 lfo3\;vertical-align:middle">
+	<span lang="DA" style="mso-ligatures:none\;mso-fareast-language:#2000">Api
+	 skal være unikt IP per dag\, (skal komme fra nclan)<o:p></o:p></span></l
+	i></ul><p class="MsoNormal" style="margin-left:72.0pt\;vertical-align:midd
+	le"><span lang="EN-US" style="mso-ligatures:none\;mso-fareast-language:#20
+	00"><a href="https://splunk.nchosting.dk/en-US/app/NCOP-OBAD/search?earlie
+	st=-30d%40d&amp\;latest=now&amp\;q=%7C%20from%20datamodel%3A%22IIS_Base_Po
+	rtal_Logs%22%20%7C%20search%0A%20%20%20%20%20%20%20%20%20%20application_ty
+	pe%3Dapi%0A%20%20%20%20%20%20%20%20%20%20AND%20portal%3Dad%0A%20%20%20%20%
+	20%20%20%20%20%20AND%20(c_ip%3D%22172.*%22%20OR%20c_ip%3D%22192.168.*%22)%
+	0A%20%7C%20stats%20dc(c_ip)%20as%20unique_ips%20by%20date&amp\;display.pag
+	e.search.mode=smart&amp\;dispatch.sample_ratio=1&amp\;display.page.search.
+	tab=visualizations&amp\;display.general.type=visualizations&amp\;sid=17135
+	32366.17684292">https://splunk.nchosting.dk/en-US/app/NCOP-OBAD/search?ear
+	liest=-30d%40d&amp\;latest=now&amp\;q=%7C%20from%20datamodel%3A%22IIS_Base
+	_Portal_Logs%22%20%7C%20search%0A%20%20%20%20%20%20%20%20%20%20application
+	_type%3Dapi%0A%20%20%20%20%20%20%20%20%20%20AND%20portal%3Dad%0A%20%20%20%
+	20%20%20%20%20%20%20AND%20(c_ip%3D%22172.*%22%20OR%20c_ip%3D%22192.168.*%2
+	2)%0A%20%7C%20stats%20dc(c_ip)%20as%20unique_ips%20by%20date&amp\;display.
+	page.search.mode=smart&amp\;dispatch.sample_ratio=1&amp\;display.page.sear
+	ch.tab=visualizations&amp\;display.general.type=visualizations&amp\;sid=17
+	13532366.17684292</a><br>| from datamodel:&quot\;IIS_Base_Portal_Logs&quot
+	\; | search<o:p></o:p></span></p><p class="MsoNormal" style="margin-left:7
+	2.0pt\;vertical-align:middle"><span lang="EN-US" style="mso-ligatures:none
+	\;mso-fareast-language:#2000">&nbsp\;&nbsp\;&nbsp\;&nbsp\;&nbsp\;&nbsp\;&n
+	bsp\;&nbsp\;&nbsp\; application_type=api<o:p></o:p></span></p><p class="Ms
+	oNormal" style="margin-left:72.0pt\;vertical-align:middle"><span lang="EN-
+	US" style="mso-ligatures:none\;mso-fareast-language:#2000">&nbsp\;&nbsp\;&
+	nbsp\;&nbsp\;&nbsp\;&nbsp\;&nbsp\;&nbsp\;&nbsp\; AND portal=ad<o:p></o:p><
+	/span></p><p class="MsoNormal" style="margin-left:72.0pt\;vertical-align:m
+	iddle"><span lang="EN-US" style="mso-ligatures:none\;mso-fareast-language:
+	#2000">&nbsp\;&nbsp\;&nbsp\;&nbsp\;&nbsp\;&nbsp\;&nbsp\;&nbsp\;&nbsp\; AND
+	 (c_ip=&quot\;172.*&quot\; OR c_ip=&quot\;192.168.*&quot\;)<o:p></o:p></sp
+	an></p><p class="MsoNormal" style="mso-margin-top-alt:0cm\;margin-right:0c
+	m\;margin-bottom:12.0pt\;margin-left:72.0pt\;vertical-align:middle"><span 
+	lang="EN-US" style="mso-ligatures:none\;mso-fareast-language:#2000">| stat
+	s dc(c_ip) as unique_ips by date<o:p></o:p></span></p><ul style="margin-to
+	p:0cm" type="disc"><li class="MsoNormal" style="mso-list:l1 level1 lfo3\;v
+	ertical-align:middle"><span lang="EN-US" style="mso-ligatures:none\;mso-fa
+	reast-language:#2000">Main site til Klient netværk - 5 cards med standard
+	 features: Request Noc\, Request Cloud\, Guides\, Reset MFA\, Reset Passwo
+	rd<o:p></o:p></span></li><li class="MsoNormal" style="mso-list:l1 level1 l
+	fo3\;vertical-align:middle"><span lang="EN-US" style="mso-ligatures:none\;
+	mso-fareast-language:#2000">Indkald til næste møde<o:p></o:p></span></li
+	></ul><p class="MsoNormal"><span lang="en-DK"><o:p>&nbsp\;</o:p></span></p
+	></div></body></html>
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MS-OLK-APPTLASTSEQUENCE:0
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR
